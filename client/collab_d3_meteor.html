@@ -1,0 +1,100 @@
+
+<head>
+  <title>Collaborative d3.js and Meteor Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  {{> page}}
+</body>
+
+<template name="page">
+  {{#if showCreateDialog}}
+    {{> createDialog}}
+  {{/if}}
+
+  <div class="container">
+    <div class="row">
+      <div class="span1"> </div>
+
+      <div class="span10">
+        <div class="header row">
+          <div class="span5">
+            <h3 style="margin-bottom: 0px">Collaborative d3.js and Meteor Test</h3>
+          </div>
+          <div class="span5">
+            <div style="float: right">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="span6">
+            {{> cards}}
+          </div>
+          <div class="span4">
+            {{> details}}
+          </div>
+        </div>
+      </div>
+
+      <div class="span1"> </div>
+    </div>
+  </div>
+</template>
+
+<template name="cards">
+  <div class="cards">
+    {{#constant}}
+    <div id="doc">
+	  <p>-- WORKING --</p>
+      <p>Double-click the background to make a card</p>
+      <p>-- TO COME --</p>
+      <p>Double-click a card to edit it</p>
+      <p>Zoom with mouse wheel</p>
+    </div>
+<!--      <svg width="500" height="500">
+        <circle class="callout" cx=-100 cy=-100></circle>
+        <g class="circles"></g>
+        <g class="labels"></g>
+      </svg>
+-->
+    {{/constant}}
+
+  </div>
+</template>
+
+<template name="details">
+  <div class="details">
+    <h1>Placeholder</h1>
+    <div class="description">Placeholder for other controls. You know, when the demo sucks less.</div>
+  </div>
+</template>
+
+
+<template name="createDialog">
+  <div class="mask"> </div>
+  <div class="modal">
+    <div class="modal-header">
+      <button type="button" class="close cancel">&times;</button>
+      <h3>Add card</h3>
+    </div>
+
+    <div class="modal-body">
+      {{#if error}}
+        <div class="alert alert-error">{{error}}</div>
+      {{/if}}
+
+      <label>Title</label>
+      <input type="text" class="title span5">
+
+      <label>Description</label>
+      <textarea class="description span5"></textarea>
+    </div>
+
+    <div class="modal-footer">
+      <a href="#" class="btn cancel">Cancel</a>
+      <a href="#" class="btn btn-primary save">Add card</a>
+    </div>
+  </div>
+</template>
