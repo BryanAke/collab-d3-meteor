@@ -1,4 +1,4 @@
-// PMASE Tools Cards -- server
+// Collab d3 and Meteor Diarams -- server
 
 Meteor.publish("cards", function () {
   return Cards.find({});
